@@ -3,18 +3,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
+    <link rel="stylesheet" href="style.css" />
     <title>Unicode</title>
 </head>
 <body>
-<h1>Les caractères Ascii de 33 à 255</h1>
-<p/>
-<hr width="100%"/>
+<h1>Les caractères Ascii de 33 à 255 : </h1>
 
-<table border="1">
+<table>
     <c:forEach var="index" items="${indexAscii}">
         <td>
-            <div class="code" style="background-color:lightblue">${index}</div>
-            <div class="caractere" style="background-color:greenyellow">&#${index};</div>
+            <div class="code">${index}</div>
+            <div class="caractere">&#${index};</div>
             <c:if test = "${index%32==0}">
                 <tr></tr>
             </c:if>

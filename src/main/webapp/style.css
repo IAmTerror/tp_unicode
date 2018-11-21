@@ -1,0 +1,17 @@
+.code, .caractere {
+    border: thin solid black;
+    padding-bottom: 10%;
+    padding-top: 10%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    text-align: center;
+    min-width: 2em;
+}
+
+.code {
+    background-color:lightblue;
+}
+
+.caractere {
+    background-color:lightgreen;
+}
