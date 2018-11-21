@@ -13,8 +13,8 @@
 <table border="1">
     <c:forEach var="index" items="${indexAscii}">
         <td>
-            <div>${index}</div>
-            <div>&#${index};</div>
+            <div class="code" style="background-color:lightblue">${index}</div>
+            <div class="caractere" style="background-color:greenyellow">&#${index};</div>
             <c:if test = "${index%32==0}">
                 <tr></tr>
             </c:if>
@@ -22,5 +22,16 @@
     </c:forEach>
 </table>
 
-</body>
+<%--<table>--%>
+    <%--<c:forEach var="index" items="${indexAscii}">--%>
+    <%--<tbody>--%>
+    <%--<tr> <td><div>64</div> <div>&#64;</div> </td>--%>
+        <%--<td><div>65</div> <div>&#65;</div></td>--%>
+        <%--<td><div>66</div> <div>&#66;</div></td>--%>
+    <%--</tr>--%>
+    <%--</tbody>--%>
+<%--</table>--%>
+<%--</body>--%>
+<%--</c:forEach>--%>
+
 </html>
