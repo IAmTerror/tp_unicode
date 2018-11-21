@@ -15,6 +15,9 @@
         <td>
             <div>${index}</div>
             <div>&#${index};</div>
+            <c:if test = "${index%32==0}">
+                <tr></tr>
+            </c:if>
         </td>
     </c:forEach>
 </table>

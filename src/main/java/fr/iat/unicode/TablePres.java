@@ -17,7 +17,7 @@ public class TablePres extends HttpServlet {
 
         ArrayList<Integer> indexAscii = new ArrayList();
 
-        for (int i=1 ; i <= 255 ; i++) {
+        for (int i=33 ; i <= 255 ; i++) {
             indexAscii.add(i);
         }
 
