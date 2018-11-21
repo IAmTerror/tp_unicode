@@ -7,7 +7,7 @@
 </head>
 <body>
 <h2>Table de caractères Unicode</h2>
-<p><a href="table"> Liste des 256 premiers caractères</a> </p>
+<p><a href="table"> Liste des caractères Ascii de 33 à 255</a></p>
 
 </body>
 </html>
