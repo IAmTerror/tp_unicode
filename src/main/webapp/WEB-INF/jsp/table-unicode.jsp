@@ -10,27 +10,16 @@
 <h1>Les caractères Ascii de 33 à 255 : </h1>
 
 <table>
-    <c:forEach var="index" items="${indexAscii}">
+    <c:forEach var="code" items="${codeAscii}">
         <td>
-            <div class="code">${index}</div>
-            <div class="caractere">&#${index};</div>
-            <c:if test = "${index%32==0}">
+            <div class="code">${code}</div>
+            <div class="caractere">&#${code};</div>
+            <c:if test = "${code%32==0}">
                 <tr></tr>
             </c:if>
         </td>
     </c:forEach>
 </table>
 
-<%--<table>--%>
-    <%--<c:forEach var="index" items="${indexAscii}">--%>
-    <%--<tbody>--%>
-    <%--<tr> <td><div>64</div> <div>&#64;</div> </td>--%>
-        <%--<td><div>65</div> <div>&#65;</div></td>--%>
-        <%--<td><div>66</div> <div>&#66;</div></td>--%>
-    <%--</tr>--%>
-    <%--</tbody>--%>
-<%--</table>--%>
-<%--</body>--%>
-<%--</c:forEach>--%>
-
+</body>
 </html>

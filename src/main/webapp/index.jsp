@@ -7,7 +7,47 @@
 </head>
 <body>
 <h2>Table de caractères Unicode</h2>
-<p><a href="table"> Liste des caractères Ascii de 33 à 255</a></p>
+
+<form method="get" action="table">
+    <p>Choisissez un système de représentation des codes numériques :</p>
+
+    <div class="formulaire">
+        <div class="radio">
+            <label for="decimal">Décimal</label><input checked id="decimal" name="type" value="decimal" type="radio">
+            <label for="hexadecimal">Hexadécimal</label><input id="hexadecimal" name="type" value="hexadecimal"
+                                                               type="radio">
+        </div>
+
+        <p>Paramétrez manuellement une plage... :</p>
+        <div>
+            <label for="debut">Début : </label><input id="debut" type="text" name="debut">
+        </div>
+        <br/>
+        <div>
+            <label for="fin">Fin : </label><input id="fin" type="text" name="fin">
+        </div>
+        <br/>
+        <div>
+            <label for="titre">Titre : </label><input id="titre" type="text" name="titre">
+        </div>
+
+        <p>... ou bien, sélectionnez une plage prédéfinie :</p>
+        <div class="langue">
+            <SELECT name="langue" size="1">
+                <option></option>
+                <OPTION>Arabe</option>
+                <OPTION>Tibétain</option>
+                <OPTION>Katakana</option>
+                <OPTION>Hiragana</option>
+            </SELECT>
+            <br/>
+            <br/>
+            <button type="submit" name=go">Envoyer</button>
+        </div>
+
+    </div>
+
+</form>
 
 </body>
 </html>

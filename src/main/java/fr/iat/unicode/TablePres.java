@@ -15,14 +15,33 @@ public class TablePres extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        ArrayList<Integer> indexAscii = new ArrayList();
+        String type = request.getParameter("type");
+
+        ArrayList<String> codeAsciiFormate = new ArrayList();
+        ArrayList<Integer> codeAscii = new ArrayList();
+
 
         for (int i=33 ; i <= 255 ; i++) {
-            indexAscii.add(i);
+            if (type.equals("hexadecimal")) {
+                String hexadecimal = Integer.toHexString(i);
+                codeAsciiFormate.add(hexadecimal);
+                codeAscii.add(i);
+            }
+
+            if (type.equals("decimal")) {
+                String decimal = Integer.toString(i);
+                codeAsciiFormate.add(decimal);
+                codeAscii.add(i);
+            }
         }
 
+        System.out.println(codeAsciiFormate);
+        System.out.println(codeAscii);
+
+
         // pour les besoins de la vue
-        request.setAttribute("indexAscii", indexAscii);
+        request.setAttribute("codeAsciiFormate", codeAsciiFormate);
+        request.setAttribute("codeAscii", codeAscii);
         // délégation à la vue
         String laVue = "table-unicode.jsp";
         getServletConfig().getServletContext()
