@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 
 public class TablePres extends HttpServlet {
@@ -17,35 +19,39 @@ public class TablePres extends HttpServlet {
 
         String type = request.getParameter("type");
 
-        ArrayList<String> codeAsciiFormate = new ArrayList();
-        ArrayList<Integer> codeAscii = new ArrayList();
+//        ArrayList<String> codeAsciiFormate = new ArrayList();
+//        ArrayList<Integer> codeAscii = new ArrayList();
+        LinkedHashMap<String, Integer> codes = new LinkedHashMap<>();
 
 
         for (int i=33 ; i <= 255 ; i++) {
             if (type.equals("hexadecimal")) {
                 String hexadecimal = Integer.toHexString(i);
-                codeAsciiFormate.add(hexadecimal);
-                codeAscii.add(i);
+//                codeAsciiFormate.add(hexadecimal);
+//                codeAscii.add(i);
+                codes.put(hexadecimal, i);
             }
 
             if (type.equals("decimal")) {
                 String decimal = Integer.toString(i);
-                codeAsciiFormate.add(decimal);
-                codeAscii.add(i);
+//                codeAsciiFormate.add(decimal);
+//                codeAscii.add(i);
+                codes.put(decimal, i);
             }
         }
 
-        System.out.println(codeAsciiFormate);
-        System.out.println(codeAscii);
+//        System.out.println(codeAsciiFormate);
+//        System.out.println(codeAscii);
+        System.out.println(codes);
 
 
         // pour les besoins de la vue
-        request.setAttribute("codeAsciiFormate", codeAsciiFormate);
-        request.setAttribute("codeAscii", codeAscii);
+//        request.setAttribute("codeAsciiFormate", codeAsciiFormate);
+//        request.setAttribute("codeAscii", codeAscii);
+        request.setAttribute("codes", codes);
         // délégation à la vue
         String laVue = "table-unicode.jsp";
         getServletConfig().getServletContext()
                 .getRequestDispatcher("/WEB-INF/jsp/"+laVue).forward(request, response);
-
     }
 }
