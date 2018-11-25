@@ -16,13 +16,16 @@ public class TablePres extends HttpServlet {
 
         String type = request.getParameter("type");
         String langue = request.getParameter("langue");
+        String debut = request.getParameter("debut");
+        String fin = request.getParameter("fin");
+        String titre = request.getParameter("titre");
 
         LinkedHashMap<String, Integer> codes = new LinkedHashMap<>();
 
-        int plageDebut = 33;
-        int plageFin = 255;
+        int plageDebut = 0;
+        int plageFin = 0;
 
-        if(!langue.equals("")){
+        if(!langue.equals("") && debut.equals(("")) && fin.equals((""))){
             switch (langue.toLowerCase()) {
                 case "arabe":
                     plageDebut = 1536;
@@ -41,10 +44,16 @@ public class TablePres extends HttpServlet {
                     plageFin = 12447;
                     break;
             }
+        } else if (langue.equals("") && !debut.equals(("")) && !fin.equals((""))) {
+            plageDebut = Integer.valueOf(debut);
+            plageFin = Integer.valueOf(fin);
+        } else  {
+            plageDebut = 33;
+            plageFin = 255;
         }
 
 
-        for (int i= plageDebut ; i <= plageFin ; i++) {
+        for (int i = plageDebut ; i <= plageFin ; i++) {
             if (type.equals("hexadecimal")) {
                 String hexadecimal = Integer.toHexString(i);
                 codes.put(hexadecimal, i);
@@ -55,8 +64,6 @@ public class TablePres extends HttpServlet {
                 codes.put(decimal, i);
             }
         }
-
-        System.out.println(codes);
 
 
         // pour les besoins de la vue
