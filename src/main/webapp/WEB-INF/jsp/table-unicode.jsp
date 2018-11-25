@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<%--génération du titre en fonction des informations saisies par l'utilisateur OU
+titre par défaut (plage Unicode 33-255)--%>
 <c:choose>
     <c:when test="${not empty titre}">
         <h1>${titre}</h1>
@@ -17,6 +19,8 @@
     </c:otherwise>
 </c:choose>
 
+<%--affichage des codes
+(hash map ordonée, key = affichage décimal ou hexa selon choix de l'utilisateur, value = code Unicode)--%>
 <table>
     <c:forEach var="code" items="${codes}">
         <td>
