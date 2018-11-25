@@ -1,4 +1,4 @@
-Travaux pratiques
+`Travaux pratiques`
 
 Voici un bout de code HTML qui présente à la fois le code d’un caractère et une représentation de celui-ci sous la forme d’une entité HTML (dérivée du SGML). Une entité HTML est une série de caractères qui représentent un autre caractère (appelée également référence de caractère).
 
