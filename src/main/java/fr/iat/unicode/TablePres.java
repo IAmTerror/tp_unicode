@@ -18,13 +18,36 @@ public class TablePres extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String type = request.getParameter("type");
+        String langue = request.getParameter("langue");
 
 //        ArrayList<String> codeAsciiFormate = new ArrayList();
 //        ArrayList<Integer> codeAscii = new ArrayList();
         LinkedHashMap<String, Integer> codes = new LinkedHashMap<>();
 
+        int plageDebut = 33;
+        int plageFin = 255;
 
-        for (int i=33 ; i <= 255 ; i++) {
+        if(!langue.equals("")){
+            if(langue.toLowerCase().equals("arabe")){
+                plageDebut=1536;
+                plageFin=1791;
+            }
+            if(langue.toLowerCase().equals("tibetain")){
+                plageDebut=3840;
+                plageFin=4058;
+            }
+            if(langue.toLowerCase().equals("katakana")){
+                plageDebut=12448;
+                plageFin=12543;
+            }
+            if(langue.toLowerCase().equals("hiragana")){
+                plageDebut=12352;
+                plageFin=12447;
+            }
+        }
+
+
+        for (int i= plageDebut ; i <= plageFin ; i++) {
             if (type.equals("hexadecimal")) {
                 String hexadecimal = Integer.toHexString(i);
 //                codeAsciiFormate.add(hexadecimal);

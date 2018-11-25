@@ -36,7 +36,7 @@
             <SELECT name="langue" size="1">
                 <option></option>
                 <OPTION>Arabe</option>
-                <OPTION>Tibétain</option>
+                <OPTION>Tibetain</option>
                 <OPTION>Katakana</option>
                 <OPTION>Hiragana</option>
             </SELECT>
