@@ -45,8 +45,15 @@ public class UnicodeApp extends HttpServlet {
                     break;
             }
         } else if (langue.equals("") && !debut.equals(("")) && !fin.equals((""))) {
-            plageDebut = Integer.valueOf(debut);
-            plageFin = Integer.valueOf(fin);
+            int plageDebutControl = Integer.valueOf(debut);
+            int plageFinControl = Integer.valueOf(fin);
+            if (plageDebutControl < plageFinControl) {
+                plageDebut = plageDebutControl;
+                plageFin = plageFinControl;
+            } else {
+                plageDebut = 33;
+                plageFin = 255;
+            }
         } else  {
             plageDebut = 33;
             plageFin = 255;
