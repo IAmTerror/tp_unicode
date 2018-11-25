@@ -26,10 +26,6 @@
         <div>
             <label for="fin">Fin : </label><input id="fin" type="text" name="fin">
         </div>
-        <br/>
-        <div>
-            <label for="titre">Titre : </label><input id="titre" type="text" name="titre">
-        </div>
 
         <p>... ou bien, sélectionnez une plage prédéfinie :</p>
         <div class="langue">
@@ -41,9 +37,15 @@
                 <OPTION>Hiragana</option>
             </SELECT>
             <br/>
-            <br/>
-            <button type="submit">Envoyer</button>
         </div>
+
+        <p>Donnez un titre à votre plage :</p>
+        <div>
+            <label for="titre">Titre : </label><input id="titre" type="text" name="titre">
+        </div>
+
+        <br/>
+        <div><button type="submit">Envoyer</button></div>
 
     </div>
 

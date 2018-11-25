@@ -75,6 +75,7 @@ public class UnicodeApp extends HttpServlet {
 
         // pour les besoins de la vue
         request.setAttribute("codes", codes);
+        request.setAttribute("titre", titre);
         // délégation à la vue
         String laVue = "table-unicode.jsp";
         getServletConfig().getServletContext()

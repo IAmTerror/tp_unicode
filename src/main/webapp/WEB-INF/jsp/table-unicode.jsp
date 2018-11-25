@@ -7,7 +7,15 @@
     <title>Unicode</title>
 </head>
 <body>
-<h1>Les caractères Unicode de 33 à 255 : </h1>
+
+<c:choose>
+    <c:when test="${not empty titre}">
+        <h1>${titre}</h1>
+    </c:when>
+    <c:otherwise>
+        <h1>Les caractères Unicode de 33 à 255 : </h1>
+    </c:otherwise>
+</c:choose>
 
 <table>
     <c:forEach var="code" items="${codes}">
