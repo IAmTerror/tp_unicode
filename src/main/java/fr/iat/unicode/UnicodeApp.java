@@ -13,15 +13,14 @@ public class UnicodeApp extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // *************************************************************************************************************
+        // -------------------------------------------------------------------------------------------------------------
         // RECUPERATION DES PARAMETRES
-        // *************************************************************************************************************
+        // -------------------------------------------------------------------------------------------------------------
         String type = request.getParameter("type");
         String langue = request.getParameter("langue");
         String debut = request.getParameter("debut");
         String fin = request.getParameter("fin");
         String titre = request.getParameter("titre");
-        // *************************************************************************************************************
 
 
         // hashmap ordonnée : clé = affichage en décimal ou hexa selon choix de l'utilisateur ; valeur = code Unicode
@@ -30,10 +29,10 @@ public class UnicodeApp extends HttpServlet {
         int plageDebut = 0;
         int plageFin = 0;
 
-        
-        // *************************************************************************************************************
+
+        // -------------------------------------------------------------------------------------------------------------
         // GESTION DES ENTREES DE L'UTILISATEUR + DEFINITION DES PLAGES UNICODE
-        // *************************************************************************************************************
+        // -------------------------------------------------------------------------------------------------------------
         if(!langue.equals("") && debut.equals(("")) && fin.equals((""))){
             switch (langue.toLowerCase()) {
                 case "arabe":
@@ -67,12 +66,11 @@ public class UnicodeApp extends HttpServlet {
             plageDebut = 33;
             plageFin = 255;
         }
-        // *************************************************************************************************************
 
 
-        // *************************************************************************************************************
+        // -------------------------------------------------------------------------------------------------------------
         // CONVERSION DES PLAGES EN VALEURS DECIMALES OU HEXADECIMALES
-        // *************************************************************************************************************
+        // -------------------------------------------------------------------------------------------------------------
         for (int i = plageDebut ; i <= plageFin ; i++) {
             if (type.equals("hexadecimal")) {
                 String hexadecimal = Integer.toHexString(i);
@@ -84,12 +82,11 @@ public class UnicodeApp extends HttpServlet {
                 codes.put(decimal, i);
             }
         }
-        // *************************************************************************************************************
 
 
-        // *************************************************************************************************************
+        // -------------------------------------------------------------------------------------------------------------
         // GESTION DE LA VUE
-        // *************************************************************************************************************
+        // -------------------------------------------------------------------------------------------------------------
         // pour les besoins de la vue
         request.setAttribute("codes", codes);
         request.setAttribute("titre", titre);
@@ -97,6 +94,5 @@ public class UnicodeApp extends HttpServlet {
         String laVue = "table-unicode.jsp";
         getServletConfig().getServletContext()
                 .getRequestDispatcher("/WEB-INF/jsp/"+laVue).forward(request, response);
-        // *************************************************************************************************************
     }
 }
