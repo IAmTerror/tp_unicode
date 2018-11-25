@@ -42,7 +42,7 @@
             </SELECT>
             <br/>
             <br/>
-            <button type="submit" name=go">Envoyer</button>
+            <button type="submit">Envoyer</button>
         </div>
 
     </div>

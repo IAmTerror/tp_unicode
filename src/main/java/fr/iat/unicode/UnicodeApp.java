@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 
 
-public class TablePres extends HttpServlet {
+public class UnicodeApp extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
