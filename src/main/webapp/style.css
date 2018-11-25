@@ -6,6 +6,8 @@
     margin-bottom: 10%;
     text-align: center;
     min-width: 2em;
+    min-height: 20px;
+
 }
 
 .code {
@@ -15,4 +17,3 @@
 .caractere {
     background-color:lightgreen;
 }
-
